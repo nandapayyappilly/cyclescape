@@ -1,0 +1,52 @@
+body {
+    font: 100%/1.5 system-ui, sans-serif;
+    display: flex;
+    flex-flow: column;
+    max-width: 80em;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1em;
+  }
+
+#time-slider {
+  width: 400px; /* Increase this number to make it longer */
+}
+
+#map circle,
+.legend > div {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
+}
+
+.legend {
+  display: flex;
+  gap: 1px;
+  margin-block: 1em;
+  width:100%;
+}
+
+.legend > div {
+  flex: 1;
+  padding: 0.75em 2em;
+  color: white;
+  font-weight: bold;
+  background-color: var(--color);
+  text-align: center;
+}
+.legend > div:first-child {
+  text-align: center;
+}
+.legend > div:nth-child(2) {
+  text-align: center;
+}
+.legend > div:last-child {
+  text-align: center;
+}
+
